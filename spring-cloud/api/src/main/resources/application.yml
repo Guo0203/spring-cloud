@@ -17,7 +17,7 @@ spring:
       max-wait-millis: 200    #等待连接获取的最大超时时间
 
 mybatis:
-  mapper-locations: classpath:com/gpf/mapper/*.xml
+  mapper-locations: classpath:com/gpf/mapper/*.xml  #mapper映射文件
   configuration:
     map-underscore-to-camel-case: true #开启驼峰命名法
   type-aliases-package: com.gpf.entities

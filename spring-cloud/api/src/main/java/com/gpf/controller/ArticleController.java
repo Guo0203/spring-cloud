@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Description:
+ * @Description: 控制层
  * @Auther: GuoPengfei
  * @Date: 2019/9/1 13:34
  */
 @RestController
 public class ArticleController {
+
 
     @Autowired
     private ArticleService articleService;
@@ -20,6 +21,6 @@ public class ArticleController {
     @GetMapping("/article/get")
     public Article get(){
 
-        return articleService.getById();
+        return articleService.get();
     }
 }
