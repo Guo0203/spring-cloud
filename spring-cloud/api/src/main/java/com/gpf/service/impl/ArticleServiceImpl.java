@@ -1,4 +1,4 @@
-package com.gpf.service.Impl;
+package com.gpf.service.impl;
 
 import com.gpf.entities.Article;
 import com.gpf.mapper.ArticleMapper;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @Description: service实现类
- * @package: com.gpf.service.Impl
+ * @package: com.gpf.service.impl
  * @Auther: Pengfei.Guo
  * @Date: Created in 2019/9/20 14:21
  */
