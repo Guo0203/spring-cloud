@@ -1,4 +1,4 @@
-package com.gpf.mapper;
+package com.gpf.dao;
 
 import com.gpf.entities.Article;
 
@@ -7,6 +7,6 @@ import com.gpf.entities.Article;
  * @Auther: GuoPengfei
  * @Date: 2019/9/1 13:22
  */
-public interface ArticleMapper {
+public interface ArticleDao {
     public Article getArticleByID();
 }

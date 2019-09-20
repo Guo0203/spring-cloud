@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date: 2019/9/1 14:28
  */
 @SpringBootApplication
-@MapperScan(value = "com.gpf.mapper")
+@MapperScan(value = "com.gpf.dao")
 public class Api8001_App {
     public static void main(String[] args) {
         SpringApplication.run(Api8001_App.class, args);

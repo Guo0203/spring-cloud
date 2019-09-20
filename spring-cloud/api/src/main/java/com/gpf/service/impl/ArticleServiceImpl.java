@@ -1,7 +1,7 @@
 package com.gpf.service.impl;
 
 import com.gpf.entities.Article;
-import com.gpf.mapper.ArticleMapper;
+import com.gpf.dao.ArticleDao;
 import com.gpf.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class ArticleServiceImpl implements ArticleService {
 
     @Autowired(required = false)
-    private ArticleMapper articleMapper;
+    private ArticleDao articleMapper;
 
     @Override
     public Article get() {
