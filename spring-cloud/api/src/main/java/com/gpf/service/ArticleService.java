@@ -1,6 +1,7 @@
 package com.gpf.service;
 
 import com.gpf.entities.Article;
+import com.gpf.result.ResultMap;
 
 
 /**
@@ -8,8 +9,10 @@ import com.gpf.entities.Article;
  * @Auther: GuoPengfei
  * @Date: 2019/9/1 14:14
  */
-public interface ArticleService{
+public interface ArticleService<T>{
 
-    public Article get();
+    public ResultMap get();
+
+    public ResultMap update(Article article);
 
 }

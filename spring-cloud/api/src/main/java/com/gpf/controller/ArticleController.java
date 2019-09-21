@@ -1,9 +1,11 @@
 package com.gpf.controller;
 
 import com.gpf.entities.Article;
+import com.gpf.result.ResultMap;
 import com.gpf.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -19,8 +21,12 @@ public class ArticleController {
     private ArticleService articleService;
 
     @GetMapping("/article/get")
-    public Article get(){
-
+    public ResultMap get(){
         return articleService.get();
+    }
+
+    @PostMapping("/article/update")
+    public ResultMap update(Article article){
+        return articleService.update(article);
     }
 }

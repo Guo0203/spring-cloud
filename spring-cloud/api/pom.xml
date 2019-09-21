@@ -13,6 +13,13 @@
     <artifactId>api</artifactId>
 
     <dependencies>
+        <!--引入model模版-->
+        <dependency>
+            <groupId>com.gpf</groupId>
+            <artifactId>model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>

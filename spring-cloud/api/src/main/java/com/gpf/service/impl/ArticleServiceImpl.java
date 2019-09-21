@@ -1,7 +1,9 @@
 package com.gpf.service.impl;
 
+import com.gpf.contants.Operations;
 import com.gpf.entities.Article;
 import com.gpf.dao.ArticleDao;
+import com.gpf.result.ResultMap;
 import com.gpf.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +21,13 @@ public class ArticleServiceImpl implements ArticleService {
     private ArticleDao articleMapper;
 
     @Override
-    public Article get() {
-        return articleMapper.getArticleByID();
+    public ResultMap get() {
+        return new ResultMap().getResults(articleMapper.getArticleByID(), Operations.SELECT.getOperation());
+    }
+
+    @Override
+    public ResultMap update(Article article) {
+        articleMapper.updateArticleById(article);
+        return new ResultMap().getResult(article,Operations.UPDATE.getOperation());
     }
 }
