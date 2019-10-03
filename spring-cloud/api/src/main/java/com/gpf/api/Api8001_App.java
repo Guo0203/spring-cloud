@@ -1,4 +1,4 @@
-package com.gpf;
+package com.gpf.api;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date: 2019/9/1 14:28
  */
 @SpringBootApplication
-@MapperScan(value = "com.gpf.dao")
+@MapperScan(value = "com.gpf.*.dao")
 public class Api8001_App {
     public static void main(String[] args) {
         SpringApplication.run(Api8001_App.class, args);

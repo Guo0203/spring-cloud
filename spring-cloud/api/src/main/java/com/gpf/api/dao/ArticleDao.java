@@ -1,6 +1,6 @@
-package com.gpf.dao;
+package com.gpf.api.dao;
 
-import com.gpf.entities.Article;
+import com.gpf.api.entities.Article;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.gpf.contants;
+package com.gpf.model.contants;
 
 import lombok.Getter;
 

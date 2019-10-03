@@ -1,4 +1,4 @@
-package com.gpf.entities;
+package com.gpf.api.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

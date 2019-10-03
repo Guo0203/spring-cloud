@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gpf.common.dao.OperationLogDao">
+
+    <sql id="BASE_COLUMN">
+		user_name,user_role,user_ip,operation,operation_object,description,operation_result,operation_time
+	</sql>
+
+    <insert id="insertOperation" parameterType="OperationLog">
+        insert into operation_log ( <include refid="BASE_COLUMN" /> ) values (#{userName},#{userRole},#{userIp},
+        #{operation},#{operationObject},#{description},#{operationResult},#{operationTime})
+    </insert>
+</mapper>

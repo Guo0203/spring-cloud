@@ -10,17 +10,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gpf</groupId>
-    <artifactId>model</artifactId>
-
+    <artifactId>common</artifactId>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.core</groupId>-->
-            <!--<artifactId>jackson-annotations</artifactId>-->
-        <!--</dependency>-->
     </dependencies>
 
 

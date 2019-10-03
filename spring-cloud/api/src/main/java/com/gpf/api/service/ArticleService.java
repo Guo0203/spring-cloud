@@ -1,7 +1,7 @@
-package com.gpf.service;
+package com.gpf.api.service;
 
-import com.gpf.entities.Article;
-import com.gpf.result.ResultMap;
+import com.gpf.api.entities.Article;
+import com.gpf.model.result.ResultMap;
 
 
 /**

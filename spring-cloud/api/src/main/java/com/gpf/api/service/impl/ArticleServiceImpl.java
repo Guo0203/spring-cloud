@@ -1,10 +1,10 @@
-package com.gpf.service.impl;
+package com.gpf.api.service.impl;
 
-import com.gpf.contants.Operations;
-import com.gpf.entities.Article;
-import com.gpf.dao.ArticleDao;
-import com.gpf.result.ResultMap;
-import com.gpf.service.ArticleService;
+import com.gpf.api.entities.Article;
+import com.gpf.api.service.ArticleService;
+import com.gpf.model.contants.Operations;
+import com.gpf.api.dao.ArticleDao;
+import com.gpf.model.result.ResultMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
