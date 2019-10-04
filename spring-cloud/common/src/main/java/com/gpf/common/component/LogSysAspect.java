@@ -1,13 +1,12 @@
-package com.gpf.api.component;
+package com.gpf.common.component;
 
 import com.gpf.common.annotations.LogAnnotation;
 import com.gpf.common.entities.OperationLog;
 import com.gpf.common.service.OperationLogService;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
@@ -18,18 +17,22 @@ import java.lang.reflect.Method;
  * @Date: Created in 2019/10/3 13:05
  */
 @Aspect
-@Component
 public class LogSysAspect {
 
-    private OperationLog operationLog;
-
     private OperationLogService operationLogService;
+
+    public LogSysAspect() {
+    }
+
+    public LogSysAspect(OperationLogService operationLogService) {
+        this.operationLogService = operationLogService;
+    }
 
     //切点命名,将自定义注解命名为切点
     @Pointcut("@annotation(com.gpf.common.annotations.LogAnnotation)")
     public void logAnnotationAspect(){};
 
-    @Before("logAnnotationAspect()")
+    @After("logAnnotationAspect()")
     public void getBeforeInfo(JoinPoint joinPoint){
         //获取当前操作的类名
         String classPath = joinPoint.getTarget().getClass().getName();
@@ -41,15 +44,20 @@ public class LogSysAspect {
             Class clazz = Class.forName(classPath);
             Method[] methods = clazz.getMethods();
             for(Method method:methods){
-                //确定调用的方法是什么，让后用反射获取注解里面的内容
+                //确定调用的方法是什么，然后用反射获取注解里面的内容
                 if(method.getName().equals(methodName)){
-                    System.out.println(method.getAnnotation(LogAnnotation.class).operation());
-                    System.out.println(method.getAnnotation(LogAnnotation.class).description());
+                    OperationLog operationLog = new OperationLog();
+                    operationLog.setOperation(method.getAnnotation(LogAnnotation.class).operation());
+                    operationLog.setDescription(method.getAnnotation(LogAnnotation.class).description());
+                    operationLog.setOperationObject(method.getAnnotation(LogAnnotation.class).table());
+
+//                    operationLogService.insert(operationLog);
+                    System.out.println(operationLog);
+
                 }
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 }
