@@ -16,4 +16,6 @@ public @interface  LogAnnotation {
     String operation();
     //描述
     String description();
+    //操作表
+    String table();
 }

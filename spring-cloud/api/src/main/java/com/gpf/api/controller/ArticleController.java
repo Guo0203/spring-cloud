@@ -23,7 +23,7 @@ public class ArticleController {
     private ArticleService articleService;
 
     @GetMapping("/article/get")
-    @LogAnnotation(operation = "查询",description = "查找所有文章列表")
+    @LogAnnotation(operation = "查询",description = "查找所有文章列表",table = "article")
     public ResultMap get(){
         return articleService.get();
     }
